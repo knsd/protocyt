@@ -6,7 +6,7 @@ ${this.messages[message].render(state)}
 
 ${this.title(' ', this.name)}
 
-cdef inline void serialize_${this.fullname}(object array, object self):
+cdef inline void serialize_${this.fullname}(object array, object self) except *:
 
 % for index in sorted(this.fields_by_index):
     % set field = this.fields_by_index[index]
