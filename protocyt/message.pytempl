@@ -62,7 +62,7 @@ cdef inline void serialize_${this.fullname}(object array, object self) except *:
     pass
 % endfor
 
-cdef inline void serialize_with_length_${this.fullname}(object array, object self):
+cdef inline void serialize_with_length_${this.fullname}(object array, object self) except *:
     buff = bytearray()
     serialize_${this.fullname}(buff, self);
     serialize_uint64(array, PyByteArray_GET_SIZE(buff))
